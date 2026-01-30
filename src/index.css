@@ -1,0 +1,355 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent;
+    font-family: 'Inter', sans-serif;
+    user-select: none;
+}
+.drag-region {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;      
+    height: 50px;     
+    z-index: 10;     
+    cursor: grab;
+    
+}
+
+.app-frame {
+    position: relative;
+    width: 388px;
+    height: 415px;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    
+    
+}
+.app-frame.night-clear .image-1-icon,
+.app-frame.overcast-night .image-1-icon,
+.app-frame.cloudy-night .image-1-icon,
+.app-frame.rainy-night .image-1-icon,
+.app-frame.Thunderstorm-day .image-1-icon, 
+.app-frame.Thunderstorm-night .image-1-icon,
+.app-frame.partially-cloudy-night .image-1-icon{
+    filter: brightness(0.5); 
+}
+
+.app-frame.sunny-day {
+    background: linear-gradient(180deg, #AEE2FF 0%, #a3f8fb 100%);
+    color: #00d5f6;
+}
+
+.app-frame.night-clear {
+    background: #000000;
+    color: #7fffee;
+}
+.app-frame.overcast-day {
+    background-color: #B2E2E4; 
+    
+}
+.app-frame.app-frame.overcast-day .sun-1-icon, .app-frame.app-frame.overcast-night .sun-1-icon{
+    top :7px;
+    left : 25px;
+    width : 120px;
+    height : 120px;
+    
+}
+.app-frame.app-frame.overcast-day .march-7th-chibi-icon,
+.app-frame.app-frame.overcast-night .march-7th-chibi-icon,
+.app-frame.partially-cloudy-day .march-7th-chibi-icon,
+.app-frame.partially-cloudy-night .march-7th-chibi-icon{
+    transform: scaleX(-1);
+}
+.app-frame.overcast-night {
+    background-color: #2D2D2D;
+}
+
+.app-frame.rainy-night{
+    background-color : #1B1D1D;
+    
+}
+.app-frame.rainy-day{
+    background-color : #767676;
+   
+}
+.app-frame.Thunderstorm-day , .app-frame.app-frame.Thunderstorm-night{
+    background-color : #3E3E3E;
+    
+}
+.app-frame.partially-cloudy-day{
+    background-color: #A3F8FB;
+    
+}
+.app-frame.partially-cloudy-night{
+    background-color: #000000;
+    
+}
+.app-frame.partially-cloudy-night .night-clouds{
+    filter: brightness(0.5);
+}
+.app-frame.overcast-day .weather-text {
+    top: 64px; 
+}
+.image-1-icon {
+    position: absolute;
+    top: 20px;
+    left: -9px;
+    width: 480px;
+    height: 450px;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.march-7th-chibi-icon {
+    position: absolute;
+    top: 258px;
+    left: 263px;
+    width: 168px;
+    height: 168px;
+    object-fit: cover;
+    z-index: 2;
+}
+
+
+.control-btn {
+    position: absolute;
+    top: 7px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 20;
+}
+
+
+.btn-f { left: 251px; width: 36px; }
+.btn-c { left: 297px; width: 36px; }
+.btn-exit { left: 342px; width: 42px; }
+
+
+.btn-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.btn-img.hovered {
+    display: none; 
+}
+
+
+.control-btn:hover .btn-img.default {
+    display: none;
+}
+.control-btn:hover .btn-img.hovered {
+    display: block;
+}
+
+
+.control-btn:active {
+    transform: scale(0.92);
+    transition: transform 0.1s;
+}
+
+.location {
+    position: absolute;
+    top: 8px;
+    left: 21px;
+    width: 139px;
+    height: 28px;
+    z-index: 10;
+}
+
+.location2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    background-color: #fff;
+}
+
+.location-child {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 22px;
+    height: 22px;
+}
+
+.penacony {
+    position: absolute;
+    top: 5px;
+    left: 35px;
+    font-weight: 700;
+    color: #a3f8fb;
+    text-shadow: 1px 1px 0 #599cff;
+}
+
+.weatherbox {
+    position: absolute;
+    top: 65px;
+    left: 210px;
+    width: 146px;
+    height: 123px;
+    z-index: 3;
+}
+
+.weatherbox-child {
+    width: 100%;
+    height: 100%;
+    border-radius: 17px;
+    background-color: #6998D6;
+}
+
+.sun-1-icon {
+    position: absolute;
+    top: 22px;
+    left: 33px;
+    width: 79px;
+    height: 79px;
+}
+
+.weather-text {
+    position: absolute;
+    top: 59px;
+    left: 13px;
+    width: 191px;
+    text-align: center;
+    font-family: 'Jaro', sans-serif;
+    font-size: 32px;
+    color: #7fffee;
+    z-index: 5;
+    text-shadow: 2px 2px 0 #005bee;
+    display :flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c-clear-sky span#temp-display {
+    font-size: 48px;
+    display: block;
+    line-height: 1;
+}
+
+.c-clear-sky span#condition-display {
+    font-size: 32px;
+    display: block;
+    margin-top: 5px;
+}
+
+.precipitation-forecast {
+    position: absolute;
+    top: 199px;
+    left: 55px;
+    font-size: 20px;
+    font-family: 'Jaro', sans-serif;
+    color: #7fffee;
+    text-shadow: 1px 1px 0 #005bee;
+    z-index: 5;
+}
+
+.forecast-box {
+    position: absolute;
+    top: 227px;
+    left: 28px;
+    width: 231px;
+    height: 129px;
+    text-align: center;
+    font-family: 'Jaro', sans-serif;
+    color: #fff;
+    z-index: 5;
+}
+
+.forecast-box2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 31px;
+    background-color: #72b3eb;
+    border: 2px solid #0076a2;
+   background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.4) 1px,
+        transparent 1px
+    );
+    background-size: 100% 25%;
+    background-position: 0 1px;
+
+}
+.forecast-scroll {
+    position: absolute;
+    top: 15px; 
+    left: 15px;
+    width: 200px; 
+    height: 110px;
+    display: block;
+    overflow-x: auto; 
+    overflow-y: hidden;
+    z-index: 10;
+    
+}
+.forecast-scroll::-webkit-scrollbar { 
+    display: block;
+    height : 5px; 
+}
+.forecast-scroll::-webkit-scrollbar-thumb {
+    background: #0076a2;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+}
+.forecast-scroll::-webkit-scrollbar-thumb:hover {
+    background: #005bee; 
+    cursor: pointer;
+}
+.hour-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; 
+    min-width: 35px; 
+    height: 100%;
+}
+.rain-bar {
+    width: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    transition: height 0.5s ease;
+}
+.hour-text, .chance-text {
+    font-family: 'Jaro', sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-shadow: 1px 1px 0 #005bee;
+}
+.chance-text {
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+
+.extra-clouds {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 388px;
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.app-frame.partially-cloudy-day .day-clouds {
+    opacity: 1;
+}
+
+.app-frame.partially-cloudy-night .night-clouds {
+    opacity: 1;
+}

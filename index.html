@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    
+    <link rel="stylesheet" href="./src/index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jaro:wght@400&display=swap" />
+</head>
+
+<body>
+    <div class="app-frame sunny-day" id="app-frame">
+        <div class="drag-region" data-tauri-drag-region></div>
+        <img class="image-1-icon" id="bg-hills" alt="Background Hills" src="/assets/hills.png">
+        
+        <img class="march-7th-chibi-icon" id="chibi-img" alt="Character" src="/assets/march-chibi.png">
+        
+        <button class="control-btn btn-f" id="btn-f">
+            <img src="/assets/Farenheit.png" class="btn-img default" alt="F">
+            <img src="/assets/Farenheit-hovered.png" class="btn-img hovered" alt="F">
+        </button>
+
+        <button class="control-btn btn-c" id="btn-c">
+            <img src="/assets/Celcius.png" class="btn-img default" alt="C">
+            <img src="/assets/Celcius-hovered.png" class="btn-img hovered" alt="C">
+        </button>
+
+        <button class="control-btn btn-exit" onclick="window.__TAURI__.window.getCurrentWindow().close()">
+            <img src="/assets/Exit.png" class="btn-img default" alt="X">
+            <img src="/assets/Exit-hovered.png" class="btn-img hovered" alt="X">
+        </button>
+        <div class="location">
+            <div class="location2"></div>
+            <img class="location-child" alt="pin" src="/assets/pin.png">
+            <b class="penacony" id="location-text">Detecting...</b>
+        </div>
+
+        <div class="weatherbox">
+            <div class="weatherbox-child"></div>
+            <img class="sun-1-icon" id="weather-icon" alt="Weather Icon" src="/assets/sun.svg">
+        </div>
+
+        <div class="weather-text">
+            <span id="temp-display">--&deg;C</span>
+            <span id="condition-display"><br>Loading...</span>
+        </div>
+
+        <div class="precipitation-forecast">Precipitation Forecast</div>
+        <div class="forecast-box">
+            <div class="forecast-box2"></div>
+            <div id="forecast-text" class="show-forecast-graph">Loading...</div>
+        </div>
+        <img class="extra-clouds day-clouds" src="/assets/Clouds-day.png" alt="Day Clouds">
+        <img class="extra-clouds night-clouds" src="/assets/Clouds-night.png" alt="Night Clouds">
+        </div>
+    </div>
+    
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
