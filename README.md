@@ -25,3 +25,8 @@ Clone this repository then run ```npm run tauri build```
 ### For MacOS
 idc lmao
 ![March Melet](march-melet.png)
+
+
+
+## Screenshots
+![Screenshot](screenshot.png)
